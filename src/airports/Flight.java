@@ -74,6 +74,15 @@ public class Flight implements  ScheduledTravel{
         }
     }
 
+    public String getOrigin() {
+        return this.origin;
+    }
+    public String getDestination(){
+        return this.destination;
+    }
+    public Aircraft getAircraft(){
+        return this.aircraft;
+    }
 
     @Override
     public Date getDepartureTime() {
