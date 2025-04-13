@@ -32,7 +32,7 @@ public class ListBasedMinimalAirport  implements  MinimalAirport{
 
 	@Override
 	public int size() {
-		return 0;
+		return infrastructure.size();
 	}
 
 	@Override
@@ -74,13 +74,13 @@ public class ListBasedMinimalAirport  implements  MinimalAirport{
 
 	@Override
 	public void addFlight(Flight f) {
-		if(f == null){
+		if (f == null) {
 			throw new NullPointerException();
 		}
-		if(!this.airportId.equals(f.getOrigin()) || !this.airportId.equals(f.getDestination())){
-			throw new FlightScheduleException("Origon or Destination Error");
+		if (!this.airportId.equals(f.getOrigin()) && !this.airportId.equals(f.getDestination())) {
+			throw new FlightScheduleException("Origin or Destination Error");
 		}
-		if(this.scheduledFlights.contains(f)){
+		if (this.scheduledFlights.contains(f)) {
 			throw new FlightAlreadyExistsException();
 		}
 		this.scheduledFlights.add(f);
